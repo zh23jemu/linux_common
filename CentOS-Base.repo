@@ -1,0 +1,48 @@
+[base]
+name=CentOS-$releasever - Base - mirror.template.com
+baseurl=http://10.253.35.19/base/
+path=/
+enabled=1
+gpgcheck=0
+
+[updates]
+name=CentOS-$releasever - Updates - mirror.template.com
+baseurl=http://10.253.35.19/updates/
+path=/
+enabled=1
+gpgcheck=0
+
+[extras]
+name=CentOS-$releasever - Extras - mirrors.template.com
+baseurl=http://10.253.35.19/extras
+path=/
+enabled=1
+gpgcheck=0
+
+[epel]
+name=CentOS-$releasever - epel - mirrors.template.com
+baseurl=http://10.253.35.19/epel/
+failovermethod=priority
+enabled=1
+gpgcheck=0
+
+[zabbix]
+name=CentOS-$releasever - zabbix - mirrors.template.com
+baseurl=http://10.253.35.19/zabbix/
+failovermethod=priority
+enabled=1
+gpgcheck=0
+
+[ocsinventory]
+name=CentOS-$releasever - ocsinventory - mirrors.template.com
+baseurl=http://10.253.35.19/ocsinventory/
+failovermethod=priority
+enabled=1
+gpgcheck=0
+
+[zabbix-non-supported]
+name=CentOS-$releasever - zabbix-non-supported - mirrors.template.com
+baseurl=http://10.253.35.19/zabbix-non-supported/
+failovermethod=priority
+enabled=1
+gpgcheck=0
