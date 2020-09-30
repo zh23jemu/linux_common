@@ -46,3 +46,24 @@ baseurl=http://10.253.35.19/zabbix-non-supported/
 failovermethod=priority
 enabled=1
 gpgcheck=0
+
+[mysql56-community]
+name=CentOS-$releasever - mysql56-community - mirrors.template.com
+baseurl=http://10.253.35.19/mysql56-community/
+failovermethod=priority
+enabled=1
+gpgcheck=0
+
+[mysql-connectors-community]
+name=CentOS-$releasever - mysql-connectors-community - mirrors.template.com
+baseurl=http://10.253.35.19/mysql-connectors-community/
+failovermethod=priority
+enabled=1
+gpgcheck=0
+
+[mysql-tools-community]
+name=CentOS-$releasever - mysql-tools-community - mirrors.template.com
+baseurl=http://10.253.35.19/mysql-tools-community/
+failovermethod=priority
+enabled=1
+gpgcheck=0
