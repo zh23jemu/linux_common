@@ -10,14 +10,14 @@ reposync -np /mirror
 
 if [ $? -eq 0 ];then
 
-for element in `ls -F /mirror | grep '/$'`
+for element in `ls -F /mirror | grep '/$'` # only list folder
 do
-	if ! [[ $element =~ script ]];then
+	if ! [[ $element =~ script ]];then # exclude script folder
         
 	dir_or_file="/mirror/"$element
 	DATETIME=`date +%F_%T`
 
-	echo -e "\n$DATETIME Updating: $dir_or_file"
+	echo -e "\n$DATETIME Updating: $dir_or_file" # echo in a new line
         createrepo --update $dir_or_file
         
 	fi
