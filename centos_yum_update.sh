@@ -3,7 +3,7 @@
 echo 'Updating Aliyum/Zabbix/OCS Source'
 DATETIME=`date +%F_%T`
 
-#exec > /var/log/reposync_$DATETIME.log
+exec > /var/log/reposync_$DATETIME.log
 echo "START: $DATETIME started"
 
 reposync -np /mirror
