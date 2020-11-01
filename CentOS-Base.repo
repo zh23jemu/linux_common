@@ -67,3 +67,16 @@ baseurl=http://10.253.35.19/mysql-tools-community/
 failovermethod=priority
 enabled=1
 gpgcheck=0
+
+name=Ceph noarch packages
+baseurl=http://10.253.35.19/Ceph-noarch/
+enabled=1
+gpgcheck=0
+
+[Ceph-x86_64]
+name=Ceph x86_64 packages
+baseurl=http://10.253.35.19/Ceph-x86_64/
+enabled=1
+gpgcheck=0
+
+
