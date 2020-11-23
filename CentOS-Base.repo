@@ -68,6 +68,7 @@ failovermethod=priority
 enabled=1
 gpgcheck=0
 
+[Ceph-noarch]
 name=Ceph noarch packages
 baseurl=http://10.253.35.19/Ceph-noarch/
 enabled=1
@@ -79,4 +80,8 @@ baseurl=http://10.253.35.19/Ceph-x86_64/
 enabled=1
 gpgcheck=0
 
-
+[Ceph-iscsi]
+name=Ceph-iscsi 3
+baseurl=https://mirrors.aliyun.com/ceph/ceph-iscsi/3/rpm/el7/noarch/
+enabled=1
+gpgpcheck=0
