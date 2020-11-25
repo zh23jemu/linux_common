@@ -13,7 +13,7 @@ if [ $? -eq 0 ];then
 
 for element in `ls -F /mirror | grep '/$'` # only list folder
 do
-	if ! [[ $element =~ script ]];then # exclude script folder
+	if ! [[ $element =~ repo ]];then # exclude the repo folder
         
 	dir_or_file="/mirror/"$element
 	DATETIME=`date +%F_%T`
