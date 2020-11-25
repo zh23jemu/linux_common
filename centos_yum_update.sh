@@ -1,12 +1,13 @@
 #!/bin/bash
 
-echo 'Updating Aliyum/Zabbix/OCS Source'
-DATETIME=`date +%F_%T`
+echo 'Start updating...'
+date=`date +%F`
+log_file="/var/log/reposync/reposync_$date.log"
 
-exec > /var/log/reposync_$DATETIME.log
-echo "START: $DATETIME started"
+exec > $log_file
+echo "`date +%F_%T` started reposync -np"
 
-reposync -np /mirror
+reposync -np /mirror --allow-path-traversal
 
 if [ $? -eq 0 ];then
 
@@ -17,7 +18,8 @@ do
 	dir_or_file="/mirror/"$element
 	DATETIME=`date +%F_%T`
 
-	echo -e "\n$DATETIME Updating: $dir_or_file" # echo in a new line
+	echo -e "\n$DATETIME updating: $dir_or_file" # echo in a new line
+        createrepo -po $dir_or_file $dir_or_file
         createrepo --update $dir_or_file
         
 	fi
@@ -25,9 +27,12 @@ done
 
 DATETIME=`date +%F_%T`
 echo "SUCESS: $DATETIME yum update successful"
+cat $log_file | mail -s "RepoSync succeeded $date" billy.zhou@csisolar.com
 
 else
 
 echo "ERROR: $DATETIME yum update failed"
+cat $log_file | mail -s "Reposync failed $date" billy.zhou@csisolar.com
 
 fi
+
