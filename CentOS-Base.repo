@@ -82,6 +82,6 @@ gpgcheck=0
 
 [Ceph-iscsi]
 name=Ceph-iscsi 3
-baseurl=https://mirrors.aliyun.com/ceph/ceph-iscsi/3/rpm/el7/noarch/
+baseurl=http://10.253.35.19/Ceph-iscsi/
 enabled=1
 gpgpcheck=0
